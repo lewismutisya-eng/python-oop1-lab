@@ -9,11 +9,11 @@ class Book:
 
     @page_count.setter
     def page_count(self, value):
-        if isinstance(value, int):
-            self._page_count = value
-        else:
+        if not isinstance(value, int):
             print("page_count must be an integer")
-            self._page_count = None 
+            self._page_count = None
+        else:
+            self._page_count = value
 
     def turn_page(self):
         print("Flipping the page...wow, you read fast!")
